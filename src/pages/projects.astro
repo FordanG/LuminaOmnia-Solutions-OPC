@@ -1,0 +1,101 @@
+---
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import ContactCTA from "~/components/ContactCTA.astro";
+import { projects } from "~/data/site";
+---
+
+<BaseLayout
+  title="Projects"
+  description="A selected log of energy, infrastructure, and forwarding engagements across the Philippines — from Malampaya Phase III to wind-corridor logistics."
+>
+  <!-- Page header -->
+  <section class="relative bg-navy text-paper pt-40 pb-24 lg:pb-32 paper-grain overflow-hidden">
+    <div class="absolute inset-0 chart-grid opacity-[0.06] pointer-events-none" style="--color-rule: rgba(245,241,232,0.4);"></div>
+
+    <div class="relative max-w-[1440px] mx-auto px-6 lg:px-12">
+      <div class="grid lg:grid-cols-12 gap-8 items-end">
+        <div class="lg:col-span-9">
+          <p class="eyebrow eyebrow-on-dark mb-8">Chapter 03 · Selected Work</p>
+          <h1 class="display-xl text-paper">
+            A short log of <em class="emphasis-light">careful work.</em>
+          </h1>
+        </div>
+        <div class="lg:col-span-3">
+          <p class="font-mono text-[11px] tracking-[0.2em] uppercase text-paper/60 leading-relaxed">
+            Energy<br/>
+            Infrastructure<br/>
+            Forwarding<br/>
+            Renewables
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Index list -->
+  <section class="bg-paper-warm py-8 lg:py-10 paper-grain border-b border-rule">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 lg:gap-2 font-mono text-[11px] tracking-[0.2em] uppercase">
+        {projects.map((p, i) => (
+          <a href={`#${p.slug}`} class="text-slate-sea hover:text-navy transition-colors flex items-baseline gap-2">
+            <span class="text-slate-sea/55">{String(i + 1).padStart(2, "0")}</span>
+            <span class="truncate">{p.name}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Project entries -->
+  <section class="bg-paper paper-grain">
+    <div class="max-w-[1440px] mx-auto">
+      {projects.map((p, i) => {
+        const reverse = i % 2 === 1;
+        return (
+          <article
+            id={p.slug}
+            class="scroll-mt-24 grid lg:grid-cols-12 gap-0 border-b border-rule last:border-b-0"
+          >
+            <div class={`reveal relative aspect-[4/3] lg:aspect-auto lg:min-h-[640px] lg:col-span-7 ${reverse ? "lg:order-2" : ""}`}>
+              <img
+                src={p.image}
+                alt={p.name}
+                loading="lazy"
+                class="absolute inset-0 w-full h-full object-cover"
+              />
+              <span class="absolute top-6 left-6 font-mono text-[10px] tracking-[0.22em] uppercase px-2.5 py-1 bg-paper/95 text-navy">
+                {p.category}
+              </span>
+            </div>
+
+            <div class={`reveal reveal-delay-1 lg:col-span-5 px-6 lg:px-12 py-14 lg:py-24 flex flex-col justify-center ${reverse ? "lg:order-1" : ""}`}>
+              <span class="font-mono text-xs tracking-[0.22em] uppercase text-slate-sea/70 mb-4">
+                Project {String(i + 1).padStart(2, "0")} · of {String(projects.length).padStart(2, "0")}
+              </span>
+              <h2 class="display-lg text-navy mb-6">
+                {p.name}
+              </h2>
+
+              <div class="grid grid-cols-2 gap-4 mb-8 pb-8 border-b border-rule">
+                <div>
+                  <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-slate-sea/70 mb-1.5">Location</p>
+                  <p class="font-body text-sm text-navy">{p.location}</p>
+                </div>
+                <div>
+                  <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-slate-sea/70 mb-1.5">Role</p>
+                  <p class="font-body text-sm text-navy">{p.role}</p>
+                </div>
+              </div>
+
+              <p class="font-body text-base lg:text-lg text-slate-sea leading-relaxed text-pretty">
+                {p.summary}
+              </p>
+            </div>
+          </article>
+        );
+      })}
+    </div>
+  </section>
+
+  <ContactCTA />
+</BaseLayout>

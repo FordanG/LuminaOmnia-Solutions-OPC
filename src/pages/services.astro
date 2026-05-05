@@ -1,0 +1,85 @@
+---
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import ContactCTA from "~/components/ContactCTA.astro";
+import { services } from "~/data/site";
+---
+
+<BaseLayout
+  title="Services"
+  description="Customs brokerage, freight forwarding, trade compliance consultancy, administrative support, and corporate travel — fifteen years of practice, under one roof."
+>
+  <!-- Page header -->
+  <section class="relative bg-navy-abyss text-paper pt-40 pb-24 lg:pb-32 paper-grain overflow-hidden">
+    <div class="absolute inset-0 chart-grid opacity-[0.06] pointer-events-none" style="--color-rule: rgba(245,241,232,0.4);"></div>
+
+    <div class="relative max-w-[1440px] mx-auto px-6 lg:px-12">
+      <div class="grid lg:grid-cols-12 gap-8 items-end">
+        <div class="lg:col-span-8">
+          <p class="eyebrow eyebrow-on-dark mb-8">Chapter 02 · Services</p>
+          <h1 class="display-xl text-paper">
+            Five practices,<br/>
+            one <em class="emphasis-light">careful</em> hand.
+          </h1>
+        </div>
+        <div class="lg:col-span-4">
+          <p class="font-body text-base lg:text-lg text-paper/75 leading-relaxed text-pretty">
+            We work end-to-end across customs, logistics, and the administrative scaffolding that holds them together. Engagements are scoped tightly and priced fairly.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services index — anchored sections -->
+  <section class="bg-paper paper-grain">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12 py-16 lg:py-24">
+      <!-- Quick index -->
+      <div class="border-y border-rule py-6 mb-16 lg:mb-24 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6">
+        {services.map((s) => (
+          <a href={`#${s.slug}`} class="group">
+            <p class="font-mono text-[10px] tracking-[0.22em] text-slate-sea/70 mb-1.5">{s.number}</p>
+            <p class="display-sm text-navy group-hover:text-brass-deep transition-colors">
+              {s.title}
+            </p>
+          </a>
+        ))}
+      </div>
+
+      <!-- Detail blocks -->
+      {services.map((s) => (
+        <article id={s.slug} class="reveal scroll-mt-24 grid lg:grid-cols-12 gap-8 lg:gap-12 py-16 lg:py-20 border-t border-rule first:border-t-0">
+          <div class="lg:col-span-5">
+            <span class="number-block">{s.number}.</span>
+            <p class="font-mono text-[11px] tracking-[0.22em] uppercase text-slate-sea mt-2 mb-2">{s.eyebrow}</p>
+            <h2 class="display-lg text-navy">
+              {s.title}
+            </h2>
+          </div>
+
+          <div class="lg:col-span-7">
+            <p class="font-body text-lg lg:text-xl text-slate-sea leading-relaxed text-pretty mb-8 max-w-2xl">
+              {s.summary}
+            </p>
+
+            <ul class="grid sm:grid-cols-2 gap-x-6 gap-y-3 max-w-2xl">
+              {s.bullets.map((b) => (
+                <li class="flex items-baseline gap-3 font-body text-[15px] text-ink/80">
+                  <span class="font-mono text-[10px] text-brass-deep">◆</span>
+                  <span>{b}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div class="mt-8">
+              <a href="/contact" class="ink-link font-mono text-xs tracking-[0.2em] uppercase">
+                Inquire about {s.title.toLowerCase()} →
+              </a>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <ContactCTA />
+</BaseLayout>

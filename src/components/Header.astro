@@ -1,0 +1,170 @@
+---
+import { nav, site } from "~/data/site";
+const pathname = Astro.url.pathname;
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-500" data-header>
+  <div class="absolute inset-0 backdrop-blur-md transition-opacity duration-500 opacity-0 pointer-events-none" data-header-bg style="background: linear-gradient(to bottom, rgba(245, 241, 232, 0.96), rgba(245, 241, 232, 0.88));"></div>
+
+  <div class="relative max-w-[1440px] mx-auto px-6 lg:px-12 py-5 lg:py-6 flex items-center justify-between gap-6">
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-3 group" aria-label={site.name}>
+      <img
+        src="/img/logo.png"
+        alt=""
+        width="44"
+        height="44"
+        class="w-10 h-10 lg:w-11 lg:h-11 object-contain"
+        data-logo
+      />
+      <div class="leading-tight hidden sm:block">
+        <div class="display-xs text-paper transition-colors" data-logo-text>
+          LuminaOmnia
+        </div>
+        <div class="font-mono text-[9px] tracking-[0.28em] uppercase text-paper/60 mt-0.5" data-logo-sub>
+          Solutions · Trading · OPC
+        </div>
+      </div>
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden lg:flex items-center gap-8" aria-label="Primary">
+      {nav.map((item) => {
+        const isActive = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
+        return (
+          <a
+            href={item.href}
+            class:list={[
+              "group relative flex items-baseline gap-2 py-2 transition-colors text-paper",
+              isActive && "is-active",
+            ]}
+            data-nav-link
+            aria-current={isActive ? "page" : undefined}
+          >
+            <span class="font-mono text-[10px] tracking-[0.2em] opacity-50 group-hover:opacity-100 transition-opacity">
+              {item.chapter}
+            </span>
+            <span class="font-body text-[14px] tracking-wide">
+              {item.label}
+            </span>
+            <span
+              class:list={[
+                "absolute -bottom-0.5 left-0 right-0 h-px bg-current origin-left transition-transform duration-500",
+                isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100",
+              ]}
+            ></span>
+          </a>
+        );
+      })}
+    </nav>
+
+    <!-- CTA -->
+    <a
+      href="/contact"
+      class="hidden lg:inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.2em] uppercase text-paper border border-paper/35 px-5 py-2.5 hover:bg-paper/10 hover:border-paper transition-all duration-400"
+      data-cta
+    >
+      <span>Request a Quote</span>
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M2 6H10M10 6L6 2M10 6L6 10" stroke="currentColor" stroke-width="1.2" stroke-linecap="square"/>
+      </svg>
+    </a>
+
+    <!-- Mobile menu button -->
+    <button
+      class="lg:hidden flex items-center justify-center w-11 h-11 -mr-2 text-paper"
+      data-menu-btn
+      aria-label="Toggle menu"
+      aria-expanded="false"
+    >
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="1.4" stroke-linecap="square" data-menu-icon-bars/>
+        <path d="M5 5l12 12M17 5L5 17" stroke="currentColor" stroke-width="1.4" stroke-linecap="square" class="hidden" data-menu-icon-x/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile drawer -->
+  <div
+    class="lg:hidden fixed inset-x-0 top-[68px] bottom-0 bg-navy-abyss text-paper translate-x-full transition-transform duration-500 ease-out"
+    data-menu-drawer
+  >
+    <div class="paper-grain h-full overflow-y-auto p-8 pt-12">
+      <nav class="flex flex-col gap-1" aria-label="Mobile">
+        {nav.map((item) => (
+          <a
+            href={item.href}
+            class="group flex items-baseline gap-4 py-5 border-b border-paper/10"
+          >
+            <span class="font-mono text-xs tracking-widest text-paper/60">{item.chapter}</span>
+            <span class="display-md text-paper">
+              {item.label}
+            </span>
+            <svg class="ml-auto opacity-40 group-hover:opacity-100 group-hover:translate-x-1 transition-all" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M3 10h14M17 10l-5-5M17 10l-5 5" stroke="currentColor" stroke-width="1.2"/>
+            </svg>
+          </a>
+        ))}
+      </nav>
+      <div class="mt-12 pt-8 border-t border-paper/10">
+        <p class="eyebrow eyebrow-on-dark mb-3">Direct Line</p>
+        <a href={`tel:${site.contact.phone.replace(/\s/g, "")}`} class="display-md text-paper block">{site.contact.phone}</a>
+        <a href={`mailto:${site.contact.email}`} class="font-body text-sm text-paper/70 mt-1 block">{site.contact.email}</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const setupHeader = () => {
+    const header = document.querySelector<HTMLElement>("[data-header]");
+    const headerBg = document.querySelector<HTMLElement>("[data-header-bg]");
+    const navLinks = document.querySelectorAll<HTMLAnchorElement>("[data-nav-link]");
+    const logoText = document.querySelector<HTMLElement>("[data-logo-text]");
+    const logoSub = document.querySelector<HTMLElement>("[data-logo-sub]");
+    const cta = document.querySelector<HTMLElement>("[data-cta]");
+    const menuBtn = document.querySelector<HTMLButtonElement>("[data-menu-btn]");
+    const menuDrawer = document.querySelector<HTMLElement>("[data-menu-drawer]");
+    const iconBars = document.querySelector<SVGElement>("[data-menu-icon-bars]");
+    const iconX = document.querySelector<SVGElement>("[data-menu-icon-x]");
+
+    if (!header) return;
+
+    const setMode = (scrolled: boolean) => {
+      if (!headerBg) return;
+      headerBg.style.opacity = scrolled ? "1" : "0";
+      const linkColor = scrolled ? "#1a1a1a" : "#f5f1e8";
+      const subColor = scrolled ? "rgba(44,74,96,0.7)" : "rgba(245,241,232,0.6)";
+      navLinks.forEach((l) => (l.style.color = linkColor));
+      if (logoText) logoText.style.color = linkColor;
+      if (logoSub) logoSub.style.color = subColor;
+      if (cta) {
+        cta.style.color = linkColor;
+        cta.style.borderColor = scrolled ? "rgba(20,48,92,0.25)" : "rgba(245,241,232,0.35)";
+      }
+    };
+
+    let scrolled = window.scrollY > 40;
+    setMode(scrolled);
+    window.addEventListener("scroll", () => {
+      const next = window.scrollY > 40;
+      if (next !== scrolled) {
+        scrolled = next;
+        setMode(scrolled);
+      }
+    }, { passive: true });
+
+    // Mobile menu toggle
+    if (menuBtn && menuDrawer && iconBars && iconX) {
+      menuBtn.addEventListener("click", () => {
+        const open = menuDrawer.classList.toggle("translate-x-full") === false;
+        menuBtn.setAttribute("aria-expanded", String(open));
+        iconBars.classList.toggle("hidden", open);
+        iconX.classList.toggle("hidden", !open);
+        document.body.style.overflow = open ? "hidden" : "";
+      });
+    }
+  };
+
+  document.addEventListener("astro:page-load", setupHeader);
+</script>

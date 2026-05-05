@@ -1,0 +1,171 @@
+---
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import ContactCTA from "~/components/ContactCTA.astro";
+import { site, timeline, principles } from "~/data/site";
+---
+
+<BaseLayout
+  title="About"
+  description="The story behind LuminaOmnia Solutions Trading OPC — founder Jenny Thater, fifteen years in customs brokerage and logistics, and the principles that guide a deliberately small house."
+>
+  <!-- Page header -->
+  <section class="relative bg-paper-warm pt-40 pb-20 lg:pb-28 paper-grain overflow-hidden">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+      <div class="grid lg:grid-cols-12 gap-8 items-end">
+        <div class="lg:col-span-9">
+          <p class="eyebrow mb-8">Chapter 04 · About</p>
+          <h1 class="display-xl text-navy">
+            A small house,<br/>
+            on the <em class="emphasis-dark">Zambales coast.</em>
+          </h1>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder -->
+  <section class="relative bg-paper py-24 lg:py-36 paper-grain overflow-hidden">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <div class="reveal lg:col-span-5 lg:sticky lg:top-32">
+          <div class="aspect-[4/5] relative overflow-hidden bg-paper-deep">
+            <img
+              src="/img/founder-portrait.jpg"
+              alt="Jenny Thater, President & CEO of LuminaOmnia Solutions"
+              loading="lazy"
+              class="absolute inset-0 w-full h-full object-cover object-top"
+            />
+            <div class="absolute inset-3 border border-paper/40 pointer-events-none"></div>
+            <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end font-mono text-[10px] tracking-[0.22em] uppercase text-paper">
+              <span class="bg-navy/80 backdrop-blur-sm px-2 py-1">Plate · 01</span>
+              <span class="text-right bg-navy/80 backdrop-blur-sm px-2 py-1">{site.founder.shortName}<br/><span class="text-paper/70 font-normal normal-case">{site.founder.title}</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7">
+          <p class="reveal eyebrow mb-6">The Founder</p>
+          <h2 class="reveal reveal-delay-1 display-lg text-navy mb-10">
+            <em class="emphasis-dark">Jennelyn</em> Dominguez Thater
+          </h2>
+
+          <div class="reveal reveal-delay-2 space-y-6 max-w-2xl">
+            <p class="font-body text-base lg:text-lg text-slate-sea leading-relaxed text-pretty">
+              Jenny was born and raised on the Zambales coast — the same coastline whose lighthouse now sits at the heart of our crest. She has spent over fifteen years inside the consultancy, brokerage, and logistics trade, learning the work the slow way: from inside customs houses, behind freight desks, and at the side of project managers steering large-scale energy and infrastructure builds.
+            </p>
+            <p class="font-body text-base lg:text-lg text-slate-sea leading-relaxed text-pretty">
+              She is a proud solo parent to three boys, an active member of the Alliance of Business Elites, and the founder behind LuminaOmnia. The house is named after the lighthouses that guided ships home along the Philippine coast — a quiet promise that every shipment in our care is steered carefully, accurately, and to the right shore.
+            </p>
+            <p class="font-body text-base lg:text-lg text-slate-sea leading-relaxed text-pretty italic">
+              "I built LuminaOmnia to keep doing the work I love, the way I think it should be done — with care, clarity, and the kind of relationships that outlast any single shipment."
+            </p>
+          </div>
+
+          <div class="reveal reveal-delay-3 mt-12 pt-10 border-t border-rule">
+            <p class="eyebrow mb-4">Affiliations</p>
+            <div class="flex flex-wrap gap-x-10 gap-y-4">
+              {site.affiliations.map((a) => (
+                <div>
+                  <p class="display-sm text-navy">{a.name}</p>
+                  <p class="font-body text-sm text-slate-sea/80">{a.full}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision / Mission -->
+  <section class="relative bg-navy-abyss text-paper py-24 lg:py-36 paper-grain overflow-hidden">
+    <div class="absolute inset-0 chart-grid opacity-[0.05] pointer-events-none" style="--color-rule: rgba(245,241,232,0.3);"></div>
+
+    <div class="relative max-w-[1440px] mx-auto px-6 lg:px-12">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+        <div class="reveal lg:col-span-6">
+          <p class="eyebrow eyebrow-on-dark mb-6">Vision</p>
+          <h3 class="display-md text-paper">
+            To be the leading service provider known for expediting client needs — with unwavering commitment to <em class="emphasis-light">quality, ethics,</em> and a safe, supportive, spiritually nourishing environment for our business, clients, and people.
+          </h3>
+        </div>
+        <div class="reveal reveal-delay-2 lg:col-span-6">
+          <p class="eyebrow eyebrow-on-dark mb-6">Mission</p>
+          <h3 class="display-md text-paper">
+            To deliver unparalleled, expedited service that exceeds client expectations — while upholding the highest standards of quality and ethics, and fostering <em class="emphasis-light">enduring relationships</em> and sustainable growth.
+          </h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="relative bg-paper py-24 lg:py-36 paper-grain">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+      <div class="grid lg:grid-cols-12 gap-8 mb-16 lg:mb-24 items-end">
+        <div class="lg:col-span-7">
+          <p class="reveal eyebrow mb-6">The Long View</p>
+          <h2 class="reveal reveal-delay-1 display-lg text-navy">
+            From cargo dock<br/>to <em class="emphasis-dark">corporation.</em>
+          </h2>
+        </div>
+        <div class="reveal reveal-delay-2 lg:col-span-4 lg:col-start-9">
+          <p class="font-body text-[15px] text-slate-sea leading-relaxed">
+            A short timeline of the experience and milestones that shaped the firm — and the road we are mapping now.
+          </p>
+        </div>
+      </div>
+
+      <ol class="relative max-w-4xl mx-auto">
+        <span class="absolute left-3 top-2 bottom-2 w-px bg-rule" aria-hidden="true"></span>
+
+        {timeline.map((t, i) => (
+          <li class="reveal relative pl-12 pb-12 last:pb-0" style={`transition-delay: ${i * 80}ms;`}>
+            <span class="absolute left-0 top-1 w-6 h-6 rounded-full bg-paper border border-brass flex items-center justify-center">
+              <span class="w-2 h-2 rounded-full bg-brass"></span>
+            </span>
+            <p class="font-mono text-[11px] tracking-[0.2em] uppercase text-slate-sea/70 mb-1">{t.period}</p>
+            <h3 class="display-md text-navy mb-2">
+              {t.title}
+            </h3>
+            <p class="font-body text-base text-slate-sea leading-relaxed text-pretty max-w-2xl">
+              {t.body}
+            </p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- Principles re-stated -->
+  <section class="bg-paper-warm py-24 lg:py-32 paper-grain">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+      <div class="mb-12">
+        <p class="reveal eyebrow mb-4">House Principles</p>
+        <h2 class="reveal reveal-delay-1 display-lg text-navy">
+          Four <em class="emphasis-dark">non-negotiables.</em>
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-x-12 gap-y-10">
+        {principles.map((p, i) => (
+          <div class="reveal flex gap-6" style={`transition-delay: ${i * 80}ms;`}>
+            <span class="number-block flex-shrink-0 w-14">
+              {p.number}
+            </span>
+            <div>
+              <h3 class="display-sm text-navy mb-3">
+                {p.title}
+              </h3>
+              <p class="font-body text-[15px] text-slate-sea leading-relaxed text-pretty">
+                {p.body}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <ContactCTA />
+</BaseLayout>

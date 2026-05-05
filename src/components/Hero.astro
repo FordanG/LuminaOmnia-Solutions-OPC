@@ -1,0 +1,80 @@
+---
+---
+
+<section class="relative h-screen min-h-[600px] w-full overflow-hidden bg-navy-abyss text-paper">
+  <!-- Video background -->
+  <div class="absolute inset-0 overflow-hidden">
+    <video
+      class="hero-video absolute inset-0 w-full h-full object-cover"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      poster="/video/hero-poster.jpg"
+    >
+      <source src="/video/hero.mp4" type="video/mp4" media="(min-width: 768px)" />
+      <source src="/video/hero-mobile.mp4" type="video/mp4" />
+    </video>
+
+    <!-- Single gradient — heavier on the left so the headline sits on a clean ground,
+         transparent on the right so the video's centered crest reads. -->
+    <div class="absolute inset-0 bg-gradient-to-r from-navy-abyss/90 via-navy-abyss/40 to-transparent"></div>
+    <!-- Soft bottom fade for the CTAs -->
+    <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-navy-abyss/70 to-transparent"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="relative h-full max-w-[1440px] mx-auto px-6 lg:px-12 flex flex-col justify-end pb-14 lg:pb-20">
+    <div class="grid grid-cols-12 gap-6">
+      <div class="col-span-12 md:col-span-9 lg:col-span-7 xl:col-span-6">
+        <p class="reveal eyebrow eyebrow-on-dark mb-6">
+          <span class="status-dot"></span>
+          Consultancy · Brokerage · Logistics
+        </p>
+
+        <h1 class="reveal reveal-delay-1 hero-headline text-paper">
+          Where efficiency meets <em class="emphasis-light">excellence,</em> every mile of the way.
+        </h1>
+
+        <div class="reveal reveal-delay-2 mt-9 lg:mt-11 flex flex-col sm:flex-row gap-3">
+          <a href="/services" class="btn-brass">
+            <span>Our Services</span>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M2 7h10M12 7L8 3M12 7l-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="square"/>
+            </svg>
+          </a>
+          <a href="/contact" class="btn-ghost">
+            <span>Request a Quote</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-headline {
+    font-family: var(--font-display);
+    font-size: clamp(2.25rem, 4.6vw, 4.5rem);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    font-variation-settings: "opsz" 144, "SOFT" 30, "wght" 380;
+    text-wrap: balance;
+  }
+
+  .status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 9999px;
+    background-color: var(--color-lighthouse);
+    box-shadow: 0 0 0 3px rgba(214, 40, 40, 0.18);
+    animation: pulse 2.4s ease-in-out infinite;
+    flex-shrink: 0;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.55; }
+  }
+</style>

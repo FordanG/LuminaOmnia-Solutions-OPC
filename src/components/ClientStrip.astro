@@ -1,0 +1,28 @@
+---
+import { clients } from "~/data/site";
+const doubled = [...clients, ...clients];
+---
+
+<section class="bg-paper-warm border-y border-rule paper-grain overflow-hidden">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-12 py-10">
+    <div class="grid lg:grid-cols-12 gap-8 items-center">
+      <div class="lg:col-span-3">
+        <p class="eyebrow mb-2">Trusted by</p>
+        <p class="display-sm text-navy">Clients & partners</p>
+      </div>
+      <div class="lg:col-span-9 marquee relative overflow-hidden">
+        <!-- Edge fades -->
+        <div class="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-paper-warm to-transparent z-10 pointer-events-none"></div>
+        <div class="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-paper-warm to-transparent z-10 pointer-events-none"></div>
+
+        <div class="marquee-track flex items-center gap-12 lg:gap-16 whitespace-nowrap">
+          {doubled.map((c) => (
+            <span class="display-md text-slate-sea/65 hover:text-navy transition-colors flex-shrink-0">
+              {c}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

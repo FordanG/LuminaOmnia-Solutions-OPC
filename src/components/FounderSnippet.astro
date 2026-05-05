@@ -1,0 +1,51 @@
+---
+import { site } from "~/data/site";
+---
+
+<section class="relative bg-paper py-24 lg:py-36 overflow-hidden">
+  <!-- Decorative big serif numeral -->
+  <div class="absolute -left-8 top-12 lg:left-0 lg:top-20 pointer-events-none select-none opacity-[0.05]" aria-hidden="true">
+    <span class="font-display text-[16rem] lg:text-[28rem] leading-none text-brass" style="font-variation-settings: 'opsz' 144, 'SOFT' 100, 'wght' 200;">
+      Lo.
+    </span>
+  </div>
+
+  <div class="relative max-w-[1440px] mx-auto px-6 lg:px-12">
+    <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      <div class="reveal lg:col-span-5">
+        <div class="aspect-[4/5] relative overflow-hidden bg-paper-deep">
+          <img
+            src="/img/founder-portrait.jpg"
+            alt="Jenny Thater, founder of LuminaOmnia Solutions"
+            loading="lazy"
+            class="absolute inset-0 w-full h-full object-cover object-top"
+          />
+          <!-- Subtle frame -->
+          <div class="absolute inset-3 border border-paper/40 pointer-events-none"></div>
+          <!-- Caption corner -->
+          <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end font-mono text-[10px] tracking-[0.22em] uppercase text-paper">
+            <span class="bg-navy/80 backdrop-blur-sm px-2 py-1">Plate · 01</span>
+            <span class="text-right bg-navy/80 backdrop-blur-sm px-2 py-1">{site.founder.shortName}<br/><span class="text-paper/70 font-normal normal-case">President & CEO</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-6 lg:col-start-7">
+        <p class="reveal eyebrow mb-6">Chapter 04 · The Founder</p>
+        <h2 class="reveal reveal-delay-1 display-lg text-navy mb-8">
+          Fifteen years of careful work — <em class="emphasis-dark">condensed into one house.</em>
+        </h2>
+        <p class="reveal reveal-delay-2 font-body text-base lg:text-lg text-slate-sea leading-relaxed text-pretty mb-6 max-w-xl">
+          {site.founder.bio}
+        </p>
+        <p class="reveal reveal-delay-3 font-body text-[15px] text-slate-sea/80 italic leading-relaxed text-pretty mb-10 max-w-xl">
+          "I built LuminaOmnia to keep doing the work I love, the way I think it should be done — with care, clarity, and the kind of relationships that outlast any single shipment."
+        </p>
+
+        <a href="/about" class="reveal reveal-delay-4 ink-link font-mono text-xs tracking-[0.2em] uppercase">
+          Read the full story →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
