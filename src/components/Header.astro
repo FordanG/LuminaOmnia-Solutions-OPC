@@ -4,7 +4,7 @@ const pathname = Astro.url.pathname;
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-500" data-header>
-  <div class="absolute inset-0 backdrop-blur-md transition-opacity duration-500 opacity-0 pointer-events-none" data-header-bg style="background: rgba(6, 23, 37, 0.96);"></div>
+  <div class="absolute inset-0 backdrop-blur-md transition-opacity duration-500 opacity-0 pointer-events-none" data-header-bg style="background: rgba(7, 19, 49, 0.96);"></div>
 
   <div class="relative w-full box-border max-w-[1440px] mx-auto px-6 lg:px-12 py-5 lg:py-6 flex items-center justify-between gap-6">
     <!-- Logo -->
@@ -58,7 +58,7 @@ const pathname = Astro.url.pathname;
     <!-- CTA -->
     <a
       href="/contact"
-      class="hidden lg:inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.2em] uppercase text-paper border border-paper/35 px-5 py-2.5 hover:bg-paper/10 hover:border-paper transition-all duration-400"
+      class="hidden lg:inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.2em] uppercase text-paper border border-paper/55 px-5 py-2.5 hover:bg-paper/10 hover:border-paper transition-all duration-400"
       data-cta
     >
       <span>Discuss a Shipment</span>
@@ -129,14 +129,14 @@ const pathname = Astro.url.pathname;
     const setMode = (scrolled: boolean) => {
       if (!headerBg) return;
       headerBg.style.opacity = scrolled ? "1" : "0";
-      const linkColor = "#f7f9fa";
-      const subColor = "rgba(247,249,250,0.62)";
+      const linkColor = "#f8f9fc";
+      const subColor = "rgba(248,249,252,0.62)";
       navLinks.forEach((l) => (l.style.color = linkColor));
       if (logoText) logoText.style.color = linkColor;
       if (logoSub) logoSub.style.color = subColor;
       if (cta) {
         cta.style.color = linkColor;
-        cta.style.borderColor = scrolled ? "#ff5d20" : "rgba(247,249,250,0.35)";
+        cta.style.borderColor = scrolled ? "#e0ad32" : "rgba(248,249,252,0.55)";
       }
     };
 

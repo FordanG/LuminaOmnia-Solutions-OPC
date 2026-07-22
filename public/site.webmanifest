@@ -4,8 +4,8 @@
   "description": "Customs brokerage, trade compliance, and logistics coordination in the Philippines.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#061725",
-  "theme_color": "#061725",
+  "background_color": "#071331",
+  "theme_color": "#071331",
   "icons": [
     {
       "src": "/img/favicon-192.png",

@@ -163,7 +163,7 @@ export const projects = [
     role: "Customs entry & AOG support",
     summary:
       "Long-running airfreight clearance partnership — including time-critical AOG and high-value electronics consignments cleared on the same shift.",
-    image: "https://images.pexels.com/photos/47044/airplane-cargo-loading-shipping-47044.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    image: "/img/port-blue-hour.jpg",
     accent: "brass",
   },
   {

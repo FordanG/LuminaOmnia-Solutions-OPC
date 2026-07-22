@@ -8,7 +8,7 @@ const featured = projects.slice(0, 3);
     <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-12">
       <div>
         <p class="eyebrow mb-5">Selected experience</p>
-        <h2 class="display-lg text-navy">Built for complex<br/><span class="text-signal">cargo and timelines.</span></h2>
+        <h2 class="display-lg text-navy">Built for complex<br/><span class="text-lighthouse-deep">cargo and timelines.</span></h2>
       </div>
       <a href="/projects" class="ink-link font-mono text-xs tracking-[0.16em] uppercase">View project experience →</a>
     </div>
@@ -18,11 +18,11 @@ const featured = projects.slice(0, 3);
         <article class="py-8 lg:px-8 first:pl-0 last:pr-0 border-b lg:border-r border-rule last:border-r-0">
           <div class="flex justify-between gap-4 mb-10">
             <span class="font-mono text-[10px] tracking-[.16em] uppercase text-slate-sea">{p.category}</span>
-            <span class="font-mono text-[10px] text-signal">0{i + 1}</span>
+            <span class="font-mono text-[10px] text-lighthouse-deep">0{i + 1}</span>
           </div>
           <h3 class="font-display uppercase text-3xl text-navy">{p.name}</h3>
           <p class="font-body text-sm text-slate-sea leading-relaxed mt-4">{p.summary}</p>
-          <p class="font-mono text-[10px] uppercase tracking-[.14em] text-slate-sea/70 mt-7">{p.location} · {p.role}</p>
+          <p class="font-mono text-[10px] uppercase tracking-[.14em] text-slate-sea mt-7">{p.location} · {p.role}</p>
         </article>
       ))}
     </div>

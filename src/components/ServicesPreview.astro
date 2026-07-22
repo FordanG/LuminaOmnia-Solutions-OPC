@@ -7,7 +7,7 @@ import { services } from "~/data/site";
     <div class="grid lg:grid-cols-12 gap-8 items-end mb-12 lg:mb-16">
       <div class="lg:col-span-6">
         <p class="eyebrow mb-5">What we handle</p>
-        <h2 class="display-lg text-navy">Five services.<br/><span class="text-signal">One accountable team.</span></h2>
+        <h2 class="display-lg text-navy">Five services.<br/><span class="text-lighthouse-deep">One accountable team.</span></h2>
       </div>
       <p class="lg:col-span-5 lg:col-start-8 text-base text-slate-sea leading-relaxed max-w-xl">
         From first document review to final delivery, we coordinate the work around your cargo so your team always knows what happens next.
@@ -17,8 +17,8 @@ import { services } from "~/data/site";
     <div class="service-grid border-t border-rule grid md:grid-cols-2 lg:grid-cols-5">
       {services.map((s) => (
         <a href={`/services#${s.slug}`} class="service-card group py-9 px-5 lg:px-6 border-b border-rule lg:border-r last:border-r-0 hover:bg-paper-warm transition-colors">
-          <span class="font-mono text-[11px] text-signal tracking-widest">{s.number}</span>
-          <h3 class="font-display uppercase text-2xl lg:text-[1.75rem] leading-[.95] text-navy mt-7 min-h-[3.5rem] group-hover:text-signal transition-colors">{s.title}</h3>
+          <span class="font-mono text-[11px] text-lighthouse-deep tracking-widest">{s.number}</span>
+          <h3 class="font-display uppercase text-2xl lg:text-[1.75rem] leading-[.95] text-navy mt-7 min-h-[3.5rem] group-hover:text-lighthouse-deep transition-colors">{s.title}</h3>
           <p class="font-body text-sm leading-relaxed text-slate-sea mt-5">{s.summary}</p>
           <span class="inline-block mt-7 font-mono text-[10px] uppercase tracking-[.16em] text-navy">Explore service →</span>
         </a>

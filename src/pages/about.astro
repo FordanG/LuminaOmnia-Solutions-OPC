@@ -9,12 +9,12 @@ import { site, timeline, principles } from "~/data/site";
   description="The story behind LuminaOmnia Solutions Trading OPC — founder Jenny Thater, fifteen years in customs brokerage and logistics, and the principles that guide a deliberately small house."
 >
   <!-- Page header -->
-  <section class="relative bg-paper-warm pt-40 pb-20 lg:pb-28 paper-grain overflow-hidden">
+  <section class="relative bg-navy-abyss text-paper pt-32 pb-16 lg:pt-40 lg:pb-28 paper-grain overflow-hidden">
     <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
       <div class="grid lg:grid-cols-12 gap-8 items-end">
         <div class="lg:col-span-9">
-          <p class="eyebrow mb-8">About LuminaOmnia</p>
-          <h1 class="display-xl text-navy">
+          <p class="eyebrow eyebrow-on-dark mb-8">About LuminaOmnia</p>
+          <h1 class="display-xl text-paper">
             Senior-led work,<br/>
             rooted on the <em class="emphasis-dark">Zambales coast.</em>
           </h1>
@@ -69,7 +69,7 @@ import { site, timeline, principles } from "~/data/site";
               {site.affiliations.map((a) => (
                 <div>
                   <p class="display-sm text-navy">{a.name}</p>
-                  <p class="font-body text-sm text-slate-sea/80">{a.full}</p>
+                  <p class="font-body text-sm text-slate-sea">{a.full}</p>
                 </div>
               ))}
             </div>
@@ -81,7 +81,7 @@ import { site, timeline, principles } from "~/data/site";
 
   <!-- Vision / Mission -->
   <section class="relative bg-navy-abyss text-paper py-24 lg:py-36 paper-grain overflow-hidden">
-    <div class="absolute inset-0 chart-grid opacity-[0.05] pointer-events-none" style="--color-rule: rgba(245,241,232,0.3);"></div>
+    <div class="absolute inset-0 chart-grid opacity-[0.05] pointer-events-none" style="--color-rule: rgba(248,249,252,0.3);"></div>
 
     <div class="relative max-w-[1440px] mx-auto px-6 lg:px-12">
       <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
@@ -126,7 +126,7 @@ import { site, timeline, principles } from "~/data/site";
             <span class="absolute left-0 top-1 w-6 h-6 rounded-full bg-paper border border-brass flex items-center justify-center">
               <span class="w-2 h-2 rounded-full bg-brass"></span>
             </span>
-            <p class="font-mono text-[11px] tracking-[0.2em] uppercase text-slate-sea/70 mb-1">{t.period}</p>
+            <p class="font-mono text-[11px] tracking-[0.2em] uppercase text-slate-sea mb-1">{t.period}</p>
             <h3 class="display-md text-navy mb-2">
               {t.title}
             </h3>
