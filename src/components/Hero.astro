@@ -1,51 +1,39 @@
 ---
 ---
 
-<section class="relative h-screen min-h-[600px] w-full overflow-hidden bg-navy-abyss text-paper">
-  <!-- Video background -->
+<section class="hero-shell relative min-h-[720px] h-[94svh] w-full overflow-hidden bg-navy-abyss text-paper">
   <div class="absolute inset-0 overflow-hidden">
-    <video
-      class="hero-video absolute inset-0 w-full h-full object-cover"
-      autoplay
-      muted
-      loop
-      playsinline
-      preload="metadata"
-      poster="/video/hero-poster.jpg"
-    >
-      <source src="/video/hero.mp4" type="video/mp4" media="(min-width: 768px)" />
-      <source src="/video/hero-mobile.mp4" type="video/mp4" />
-    </video>
-
-    <!-- Single gradient — heavier on the left so the headline sits on a clean ground,
-         transparent on the right so the video's centered crest reads. -->
-    <div class="absolute inset-0 bg-gradient-to-r from-navy-abyss/90 via-navy-abyss/40 to-transparent"></div>
-    <!-- Soft bottom fade for the CTAs -->
-    <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-navy-abyss/70 to-transparent"></div>
+    <img src="/img/port-blue-hour.jpg" alt="Container operations at a Philippine port at blue hour" width="1536" height="1024" fetchpriority="high" class="hero-image absolute inset-0 w-full h-full object-cover" />
+    <div class="hero-wash absolute inset-0"></div>
+    <div class="route-line absolute inset-0" aria-hidden="true"></div>
   </div>
 
   <!-- Content -->
-  <div class="relative h-full max-w-[1440px] mx-auto px-6 lg:px-12 flex flex-col justify-end pb-14 lg:pb-20">
-    <div class="grid grid-cols-12 gap-6">
-      <div class="col-span-12 md:col-span-9 lg:col-span-7 xl:col-span-6">
+  <div class="hero-content relative h-full w-full max-w-[1440px] mx-auto px-6 lg:px-12 flex flex-col justify-end pb-14 lg:pb-20">
+    <div class="hero-copy w-full max-w-[780px] min-w-0 overflow-hidden">
+      <div class="min-w-0 w-full">
         <p class="reveal eyebrow eyebrow-on-dark mb-6">
           <span class="status-dot"></span>
-          Consultancy · Brokerage · Logistics
+          Philippine customs · Trade compliance · Logistics
         </p>
 
         <h1 class="reveal reveal-delay-1 hero-headline text-paper">
-          Where efficiency meets <em class="emphasis-light">excellence,</em> every mile of the way.
+          <span class="block">Clear the</span><span class="block">paperwork.</span><em class="emphasis-light block">Move the cargo.</em>
         </h1>
 
-        <div class="reveal reveal-delay-2 mt-9 lg:mt-11 flex flex-col sm:flex-row gap-3">
-          <a href="/services" class="btn-brass">
-            <span>Our Services</span>
+        <p class="reveal reveal-delay-2 hero-deck mt-7 max-w-2xl">
+          Senior-led customs brokerage and logistics coordination for shipments that cannot afford avoidable delay.
+        </p>
+
+        <div class="reveal reveal-delay-3 mt-9 lg:mt-11 flex flex-col sm:flex-row gap-3">
+          <a href="/contact" class="btn-brass">
+            <span>Discuss a Shipment</span>
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
               <path d="M2 7h10M12 7L8 3M12 7l-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="square"/>
             </svg>
           </a>
-          <a href="/contact" class="btn-ghost">
-            <span>Request a Quote</span>
+          <a href="/services" class="btn-ghost">
+            <span>See What We Handle</span>
           </a>
         </div>
       </div>
@@ -56,19 +44,27 @@
 <style>
   .hero-headline {
     font-family: var(--font-display);
-    font-size: clamp(2.25rem, 4.6vw, 4.5rem);
-    line-height: 1.02;
-    letter-spacing: -0.02em;
-    font-variation-settings: "opsz" 144, "SOFT" 30, "wght" 380;
+    font-size: clamp(3.5rem, 8vw, 7.75rem);
+    line-height: 0.82;
+    letter-spacing: -0.035em;
+    font-weight: 600;
+    text-transform: uppercase;
     text-wrap: balance;
+    max-width: 100%;
   }
+
+  .hero-deck { font-family: var(--font-body); font-size: clamp(1rem, 1.6vw, 1.25rem); line-height: 1.6; color: rgba(246,248,250,.78); }
+  .hero-content { box-sizing: border-box; }
+  .hero-image { filter: saturate(.78) contrast(1.05); transform: scale(1.02); }
+  .hero-wash { background: linear-gradient(90deg, rgba(3,17,31,.96) 0%, rgba(3,17,31,.75) 46%, rgba(3,17,31,.16) 83%), linear-gradient(0deg, rgba(3,17,31,.82), transparent 55%); }
+  .route-line { opacity: .22; background: linear-gradient(112deg, transparent 49.8%, var(--color-signal) 49.9%, var(--color-signal) 50.02%, transparent 50.12%); }
 
   .status-dot {
     width: 6px;
     height: 6px;
     border-radius: 9999px;
-    background-color: var(--color-lighthouse);
-    box-shadow: 0 0 0 3px rgba(214, 40, 40, 0.18);
+    background-color: var(--color-signal);
+    box-shadow: 0 0 0 4px rgba(255, 93, 32, 0.2);
     animation: pulse 2.4s ease-in-out infinite;
     flex-shrink: 0;
   }
@@ -76,5 +72,11 @@
   @keyframes pulse {
     0%, 100% { opacity: 1; }
     50% { opacity: 0.55; }
+  }
+
+  @media (max-width: 480px) {
+    .hero-copy { max-width: calc(100vw - 3rem); }
+    .hero-headline { font-size: 3.05rem; line-height: .86; }
+    .hero-deck { font-size: .92rem; line-height: 1.55; }
   }
 </style>

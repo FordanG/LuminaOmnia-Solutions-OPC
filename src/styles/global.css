@@ -1,25 +1,26 @@
 @import "tailwindcss";
 
-/* ─── Theme: Editorial Maritime ─────────────────────────────────── */
+/* ─── Theme: Port Intelligence ──────────────────────────────────── */
 @theme {
-  --color-ink: #1a1a1a;
-  --color-paper: #f5f1e8;
-  --color-paper-warm: #ede5d3;
-  --color-paper-deep: #e4d9bd;
-  --color-navy: #14305c;
-  --color-navy-deep: #0a1d3d;
-  --color-navy-abyss: #061027;
-  --color-slate-sea: #2c4a60;
-  --color-brass: #d4a24a;
-  --color-brass-deep: #a87d2c;
-  --color-brass-glow: #e8c071;
-  --color-lighthouse: #d62828;
-  --color-lighthouse-deep: #a01818;
-  --color-fog: #d4d2cc;
-  --color-rule: rgba(20, 48, 92, 0.18);
+  --color-ink: #17212a;
+  --color-paper: #f7f9fa;
+  --color-paper-warm: #e8eef1;
+  --color-paper-deep: #d6e0e5;
+  --color-navy: #123b56;
+  --color-navy-deep: #0a2940;
+  --color-navy-abyss: #061725;
+  --color-slate-sea: #405968;
+  --color-brass: #ff5d20;
+  --color-brass-deep: #d9430b;
+  --color-brass-glow: #ff7a45;
+  --color-lighthouse: #ff5d20;
+  --color-lighthouse-deep: #d9430b;
+  --color-fog: #c9d4da;
+  --color-rule: rgba(18, 59, 86, 0.18);
+  --color-signal: #ff5d20;
 
-  --font-display: "Fraunces", "Times New Roman", serif;
-  --font-body: "IBM Plex Sans", "Helvetica Neue", system-ui, sans-serif;
+  --font-display: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --font-body: "Manrope", "Helvetica Neue", system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", "Courier New", monospace;
 
   --shadow-chart: 0 1px 0 rgba(20, 48, 92, 0.04), 0 0 0 1px rgba(20, 48, 92, 0.06), 0 24px 48px -24px rgba(20, 48, 92, 0.18);
@@ -58,8 +59,9 @@
   /* Headings: defaults only — actual sizing handled by `.display-*` classes */
   h1, h2, h3, h4, h5 {
     font-family: var(--font-display);
-    letter-spacing: -0.018em;
-    line-height: 1.05;
+    letter-spacing: -0.025em;
+    line-height: 0.95;
+    text-transform: uppercase;
     color: inherit;
   }
 
@@ -80,56 +82,54 @@
   .display-sm,
   .display-xs {
     font-family: var(--font-display);
-    letter-spacing: -0.018em;
-    line-height: 1.05;
+    letter-spacing: -0.025em;
+    line-height: 0.95;
+    text-transform: uppercase;
+    font-weight: 600;
     text-wrap: balance;
   }
 
   .display-xl {
     font-size: clamp(2.75rem, 7.5vw, 6.5rem);
     line-height: 0.96;
-    font-variation-settings: "opsz" 144, "SOFT" 30, "wght" 380;
+    font-weight: 600;
   }
 
   .display-lg {
     font-size: clamp(2.25rem, 5vw, 4rem);
     line-height: 1.02;
-    font-variation-settings: "opsz" 96, "SOFT" 30, "wght" 400;
+    font-weight: 600;
   }
 
   .display-md {
     font-size: clamp(1.75rem, 3.4vw, 2.75rem);
     line-height: 1.08;
-    font-variation-settings: "opsz" 48, "SOFT" 30, "wght" 440;
+    font-weight: 600;
   }
 
   .display-sm {
     font-size: clamp(1.25rem, 2vw, 1.5rem);
     line-height: 1.2;
-    font-variation-settings: "opsz" 24, "SOFT" 0, "wght" 480;
+    font-weight: 600;
   }
 
   .display-xs {
     font-size: 1.0625rem;
     line-height: 1.3;
-    font-variation-settings: "opsz" 18, "SOFT" 0, "wght" 500;
+    font-weight: 600;
   }
 
   /* Italic emphasis — used inside display headlines.
      Single rule: italic emphasis is always brass-glow on dark, brass-deep on light.
      No more lighthouse-red switching mid-headline. */
   .emphasis-light {
-    font-style: italic;
-    font-weight: inherit;
-    color: var(--color-brass-glow);
-    font-variation-settings: "opsz" 96, "SOFT" 30, "wght" 380;
+    font-style: normal;
+    color: var(--color-paper);
   }
 
   .emphasis-dark {
-    font-style: italic;
-    font-weight: inherit;
-    color: var(--color-brass-deep);
-    font-variation-settings: "opsz" 96, "SOFT" 30, "wght" 380;
+    font-style: normal;
+    color: var(--color-signal);
   }
 
   /* Eyebrow — small mono caps used for chapter labels, section markers.
@@ -221,7 +221,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(to right, var(--color-brass-glow), var(--color-brass));
+    background: var(--color-brass-deep);
     transform: translateY(100%);
     transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
     z-index: 0;

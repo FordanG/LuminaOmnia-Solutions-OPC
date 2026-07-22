@@ -1,28 +1,24 @@
 ---
-import { clients } from "~/data/site";
-const doubled = [...clients, ...clients];
+const proof = [
+  ["Compliance first", "Accurate entries and audit-ready records"],
+  ["Senior-led", "Direct access to experienced decision-makers"],
+  ["Prepared early", "Requirements checked before cargo arrives"],
+  ["End-to-end", "Customs, freight, storage, and delivery"],
+];
 ---
 
-<section class="bg-paper-warm border-y border-rule paper-grain overflow-hidden">
-  <div class="max-w-[1440px] mx-auto px-6 lg:px-12 py-10">
-    <div class="grid lg:grid-cols-12 gap-8 items-center">
-      <div class="lg:col-span-3">
-        <p class="eyebrow mb-2">Trusted by</p>
-        <p class="display-sm text-navy">Clients & partners</p>
-      </div>
-      <div class="lg:col-span-9 marquee relative overflow-hidden">
-        <!-- Edge fades -->
-        <div class="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-paper-warm to-transparent z-10 pointer-events-none"></div>
-        <div class="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-paper-warm to-transparent z-10 pointer-events-none"></div>
-
-        <div class="marquee-track flex items-center gap-12 lg:gap-16 whitespace-nowrap">
-          {doubled.map((c) => (
-            <span class="display-md text-slate-sea/65 hover:text-navy transition-colors flex-shrink-0">
-              {c}
-            </span>
-          ))}
+<section class="bg-navy-abyss text-paper border-y border-paper/10" aria-label="How LuminaOmnia works">
+  <div class="max-w-[1440px] mx-auto grid sm:grid-cols-2 lg:grid-cols-4">
+    {proof.map(([title, body], i) => (
+      <div class="px-6 lg:px-10 py-7 border-b sm:border-r border-paper/12 last:border-r-0 sm:[&:nth-last-child(-n+2)]:border-b-0 lg:border-b-0">
+        <div class="flex gap-4">
+          <span class="font-mono text-signal text-xs mt-0.5">{String(i + 1).padStart(2, "0")}</span>
+          <div>
+            <h2 class="font-display uppercase tracking-wide text-xl text-paper">{title}</h2>
+            <p class="font-body text-xs leading-relaxed text-paper/58 mt-1">{body}</p>
+          </div>
         </div>
       </div>
-    </div>
+    ))}
   </div>
 </section>

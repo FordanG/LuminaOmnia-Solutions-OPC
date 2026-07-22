@@ -2,56 +2,25 @@
 import { services } from "~/data/site";
 ---
 
-<section class="relative bg-paper py-24 lg:py-36 paper-grain">
+<section class="relative bg-paper py-20 lg:py-28">
   <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
-    <!-- Section heading -->
-    <div class="grid lg:grid-cols-12 gap-8 mb-16 lg:mb-24 items-end">
-      <div class="lg:col-span-7">
-        <p class="reveal eyebrow mb-6">Chapter 02 · The Practice</p>
-        <h2 class="reveal reveal-delay-1 display-lg text-navy">
-          A small house, working the whole <em class="emphasis-dark">supply chain.</em>
-        </h2>
+    <div class="grid lg:grid-cols-12 gap-8 items-end mb-12 lg:mb-16">
+      <div class="lg:col-span-6">
+        <p class="eyebrow mb-5">What we handle</p>
+        <h2 class="display-lg text-navy">Five services.<br/><span class="text-signal">One accountable team.</span></h2>
       </div>
-      <div class="reveal reveal-delay-2 lg:col-span-4 lg:col-start-9">
-        <p class="font-body text-[15px] lg:text-base text-slate-sea leading-relaxed text-pretty">
-          We are deliberately small — a one-person corporation with senior partners on call. That structure means every shipment is touched by someone who has cleared a thousand like it before.
-        </p>
-      </div>
+      <p class="lg:col-span-5 lg:col-start-8 text-base text-slate-sea leading-relaxed max-w-xl">
+        From first document review to final delivery, we coordinate the work around your cargo so your team always knows what happens next.
+      </p>
     </div>
 
-    <!-- Services list -->
-    <div class="border-t border-rule">
-      {services.map((s, i) => (
-        <a
-          href={`/services#${s.slug}`}
-          class="reveal group grid lg:grid-cols-12 gap-6 lg:gap-8 py-10 lg:py-14 border-b border-rule transition-colors hover:bg-paper-warm/50"
-          style={`transition-delay: ${i * 60}ms;`}
-        >
-          <div class="lg:col-span-1">
-            <span class="font-mono text-xs tracking-[0.2em] text-slate-sea/70">{s.number}</span>
-          </div>
-          <div class="lg:col-span-4">
-            <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-slate-sea/70 mb-2">{s.eyebrow}</p>
-            <h3 class="display-md text-navy group-hover:text-brass-deep transition-colors">
-              {s.title}
-            </h3>
-          </div>
-          <div class="lg:col-span-6 lg:col-start-6">
-            <p class="font-body text-base lg:text-[17px] text-slate-sea leading-relaxed text-pretty">
-              {s.summary}
-            </p>
-          </div>
-          <div class="lg:col-span-1 flex lg:justify-end items-start lg:pt-2">
-            <svg
-              class="w-5 h-5 text-slate-sea/60 group-hover:translate-x-1 group-hover:text-brass-deep transition-all duration-500"
-              viewBox="0 0 20 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-            >
-              <path d="M3 10h14M17 10l-5-5M17 10l-5 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="square"/>
-            </svg>
-          </div>
+    <div class="service-grid border-t border-rule grid md:grid-cols-2 lg:grid-cols-5">
+      {services.map((s) => (
+        <a href={`/services#${s.slug}`} class="service-card group py-9 px-5 lg:px-6 border-b border-rule lg:border-r last:border-r-0 hover:bg-paper-warm transition-colors">
+          <span class="font-mono text-[11px] text-signal tracking-widest">{s.number}</span>
+          <h3 class="font-display uppercase text-2xl lg:text-[1.75rem] leading-[.95] text-navy mt-7 min-h-[3.5rem] group-hover:text-signal transition-colors">{s.title}</h3>
+          <p class="font-body text-sm leading-relaxed text-slate-sea mt-5">{s.summary}</p>
+          <span class="inline-block mt-7 font-mono text-[10px] uppercase tracking-[.16em] text-navy">Explore service →</span>
         </a>
       ))}
     </div>

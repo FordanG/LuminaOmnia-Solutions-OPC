@@ -28,10 +28,10 @@ import { site, nav } from "~/data/site";
     <!-- Top: Tagline + crest -->
     <div class="grid lg:grid-cols-12 gap-12 pb-16">
       <div class="lg:col-span-7">
-        <p class="eyebrow eyebrow-on-dark mb-6">The Lighthouse · Castillejos, Zambales</p>
+        <p class="eyebrow eyebrow-on-dark mb-6">Customs · Compliance · Logistics</p>
         <h2 class="display-lg text-paper">
-          Where efficiency meets excellence,<br/>
-          <em class="emphasis-light">every mile of the way.</em>
+          Clearer routes.<br/>
+          <span class="text-signal">Calmer operations.</span>
         </h2>
       </div>
       <div class="lg:col-span-5 flex lg:justify-end items-start">
@@ -62,7 +62,6 @@ import { site, nav } from "~/data/site";
           {nav.map((item) => (
             <li>
               <a href={item.href} class="group flex items-baseline gap-3 text-paper/80 hover:text-paper transition-colors">
-                <span class="font-mono text-[10px] tracking-widest opacity-50 group-hover:opacity-100">{item.chapter}</span>
                 <span class="font-body text-[15px]">{item.label}</span>
               </a>
             </li>

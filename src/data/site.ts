@@ -1,16 +1,16 @@
 export const site = {
   name: "LuminaOmnia Solutions Trading OPC",
   shortName: "LuminaOmnia",
-  tagline: "Where Efficiency Meets Excellence,\nEvery Mile of the Way.",
+  tagline: "Clearer routes. Calmer operations.",
   description:
-    "A consultancy, brokerage, and logistics firm guiding shipments through the Philippine Bureau of Customs with 15+ years of industry trust.",
+    "Customs brokerage, trade compliance, and logistics coordination for businesses moving goods through the Philippines.",
   founded: 2024,
   experienceYears: 15,
   founder: {
     name: "Jennelyn Dominguez Thater",
     shortName: "Jenny Thater",
     title: "President & CEO",
-    bio: "Born in Olongapo City and raised on the Zambales coast, Jenny has spent over fifteen years inside the consultancy, brokerage, and logistics trade — clearing shipments through the Bureau of Customs, building rapport with issuing bodies, and quietly steering large-scale projects to a calm finish. She is a proud solo parent to three boys, an active member of the Alliance of Business Elites, and the founder behind LuminaOmnia.",
+    bio: "Born in Olongapo City and raised on the Zambales coast, Jenny has spent more than fifteen years working across customs brokerage, project logistics, and trade compliance. She founded LuminaOmnia to give clients direct senior attention—from the first document review to final delivery.",
   },
   contact: {
     phone: "+63 998 855 4487",
@@ -39,7 +39,7 @@ export const services = [
     title: "Customs Brokerage",
     eyebrow: "Bureau of Customs",
     summary:
-      "End-to-end clearance for import and export shipments — tariff classification, valuation, documentation, and direct liaison with the Bureau of Customs and allied agencies.",
+      "Prepare the entry correctly, resolve requirements early, and keep the shipment moving through the Bureau of Customs and relevant agencies.",
     bullets: [
       "Import & export entry preparation",
       "HS code classification and valuation",
@@ -54,7 +54,7 @@ export const services = [
     title: "Import & Export Logistics",
     eyebrow: "Sea / Air / Land",
     summary:
-      "Door-to-door movement coordination across sea, air, and land — from origin pickup and freight booking through trucking, warehousing, and final-mile delivery.",
+      "One accountable coordinator across sea, air, and land—from origin pickup and freight booking to warehousing and final delivery.",
     bullets: [
       "International freight forwarding (FCL / LCL / air)",
       "Domestic trucking and inter-island shipping",
@@ -69,7 +69,7 @@ export const services = [
     title: "Trade & Compliance Consultancy",
     eyebrow: "Advisory",
     summary:
-      "Strategic counsel for businesses entering or scaling within Philippine markets — regulatory navigation, supply-chain design, and ongoing compliance review.",
+      "Practical guidance for businesses entering or expanding in the Philippines, with compliance risks translated into clear next actions.",
     bullets: [
       "Market entry and licensing pathways",
       "Customs compliance audits and risk reviews",
@@ -84,7 +84,7 @@ export const services = [
     title: "Administrative Support",
     eyebrow: "Operations",
     summary:
-      "The unseen scaffolding behind every cleared container — document preparation, agency follow-through, scheduling, and the quiet logistics of getting business done.",
+      "Reliable follow-through for filings, permits, records, suppliers, and the administrative work that keeps operations on schedule.",
     bullets: [
       "Document drafting, notarization, and submission",
       "Permit renewals and government filings",
@@ -99,7 +99,7 @@ export const services = [
     title: "Corporate Travel",
     eyebrow: "Itinerary & Visa",
     summary:
-      "Corporate travel arranged with the same precision we give to freight — visas, itineraries, accommodations, and ground coordination, end to end.",
+      "Visas, itineraries, accommodation, and ground transport coordinated for teams that need business travel to run without friction.",
     bullets: [
       "Visa processing and embassy liaison",
       "Flight and accommodation booking",

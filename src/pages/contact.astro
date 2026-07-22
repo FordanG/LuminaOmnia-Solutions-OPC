@@ -1,167 +1,55 @@
 ---
 import BaseLayout from "~/layouts/BaseLayout.astro";
-import { site, services } from "~/data/site";
+import { site } from "~/data/site";
 ---
 
 <BaseLayout
-  title="Contact"
-  description="Reach LuminaOmnia Solutions Trading OPC directly — phone, email, or the contact form below. Most quotes are returned the same business day."
+  title="Contact Our Customs Brokerage Team"
+  description="Contact LuminaOmnia Solutions in Castillejos, Zambales by phone or email for customs brokerage, logistics coordination, and trade compliance support."
 >
-  <!-- Page header -->
-  <section class="relative bg-paper-warm pt-40 pb-16 lg:pb-20 paper-grain overflow-hidden">
-    <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
-      <div class="grid lg:grid-cols-12 gap-8 items-end">
-        <div class="lg:col-span-9">
-          <p class="eyebrow mb-8">Chapter 05 · Contact</p>
-          <h1 class="display-xl text-navy">
-            Drop us a line —<br/>
-            we <em class="emphasis-dark">read everything.</em>
-          </h1>
-        </div>
+  <section class="relative bg-navy-abyss text-paper pt-40 pb-20 lg:pb-28 overflow-hidden">
+    <div class="absolute inset-0 route-field opacity-20" aria-hidden="true"></div>
+    <div class="relative max-w-[1440px] mx-auto px-6 lg:px-12 grid lg:grid-cols-12 gap-8 items-end">
+      <div class="lg:col-span-8">
+        <p class="eyebrow eyebrow-on-dark mb-7">Direct contact · Castillejos, Zambales</p>
+        <h1 class="display-xl text-paper">Talk to the person<br/><span class="text-signal">accountable for the work.</span></h1>
       </div>
+      <p class="lg:col-span-4 text-base lg:text-lg text-paper/70 leading-relaxed">Share your cargo, origin, destination, and target date by phone or email. We’ll tell you the next practical step.</p>
     </div>
   </section>
 
-  <!-- Form + contact details -->
-  <section class="relative bg-paper py-16 lg:py-24 paper-grain">
+  <section class="bg-paper py-16 lg:py-24">
     <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
-      <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
-        <!-- Form -->
-        <div class="reveal lg:col-span-7">
-          <p class="eyebrow mb-6">Send a message</p>
-
-          <form
-            name="contact"
-            method="POST"
-            data-netlify="true"
-            netlify-honeypot="bot-field"
-            class="space-y-6"
-          >
-            <input type="hidden" name="form-name" value="contact" />
-            <p class="hidden">
-              <label>Don't fill this out: <input name="bot-field" /></label>
-            </p>
-
-            <div class="grid sm:grid-cols-2 gap-6">
-              <div>
-                <label for="name" class="block font-mono text-[10px] tracking-[0.22em] uppercase text-slate-sea/80 mb-2">Your Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  autocomplete="name"
-                  class="w-full bg-transparent border-b border-rule pb-3 font-body text-base text-ink focus:outline-none focus:border-navy transition-colors"
-                />
-              </div>
-              <div>
-                <label for="company" class="block font-mono text-[10px] tracking-[0.22em] uppercase text-slate-sea/80 mb-2">Company</label>
-                <input
-                  type="text"
-                  id="company"
-                  name="company"
-                  autocomplete="organization"
-                  class="w-full bg-transparent border-b border-rule pb-3 font-body text-base text-ink focus:outline-none focus:border-navy transition-colors"
-                />
-              </div>
-              <div>
-                <label for="email" class="block font-mono text-[10px] tracking-[0.22em] uppercase text-slate-sea/80 mb-2">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  autocomplete="email"
-                  class="w-full bg-transparent border-b border-rule pb-3 font-body text-base text-ink focus:outline-none focus:border-navy transition-colors"
-                />
-              </div>
-              <div>
-                <label for="phone" class="block font-mono text-[10px] tracking-[0.22em] uppercase text-slate-sea/80 mb-2">Phone (optional)</label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  autocomplete="tel"
-                  class="w-full bg-transparent border-b border-rule pb-3 font-body text-base text-ink focus:outline-none focus:border-navy transition-colors"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label for="service" class="block font-mono text-[10px] tracking-[0.22em] uppercase text-slate-sea/80 mb-2">Service of interest</label>
-              <select
-                id="service"
-                name="service"
-                class="w-full bg-transparent border-b border-rule pb-3 font-body text-base text-ink focus:outline-none focus:border-navy transition-colors appearance-none"
-              >
-                <option value="">— Choose one —</option>
-                {services.map((s) => (
-                  <option value={s.title}>{s.title}</option>
-                ))}
-                <option value="Other">Other / Not sure</option>
-              </select>
-            </div>
-
-            <div>
-              <label for="message" class="block font-mono text-[10px] tracking-[0.22em] uppercase text-slate-sea/80 mb-2">Tell us about your shipment, project, or question</label>
-              <textarea
-                id="message"
-                name="message"
-                required
-                rows="6"
-                class="w-full bg-transparent border-b border-rule pb-3 font-body text-base text-ink focus:outline-none focus:border-navy transition-colors resize-none"
-              ></textarea>
-            </div>
-
-            <div class="pt-4">
-              <button type="submit" class="btn-brass">
-                <span>Send message</span>
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                  <path d="M2 7h10M12 7L8 3M12 7l-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="square"/>
-                </svg>
-              </button>
-            </div>
-          </form>
+      <div class="grid lg:grid-cols-2 border-t border-rule">
+        <a href={`tel:${site.contact.phone.replace(/\s/g, "")}`} class="group py-10 lg:py-14 lg:pr-12 border-b lg:border-r border-rule">
+          <p class="eyebrow mb-5">Call</p>
+          <p class="display-lg text-navy group-hover:text-signal transition-colors">{site.contact.phone}</p>
+          <p class="font-body text-sm text-slate-sea mt-4">Monday–Friday · 8:30 AM–5:30 PM PHT</p>
+        </a>
+        <a href={`mailto:${site.contact.email}`} class="group py-10 lg:py-14 lg:pl-12 border-b border-rule">
+          <p class="eyebrow mb-5">Email</p>
+          <p class="font-display uppercase text-[clamp(1.65rem,3vw,3rem)] leading-none text-navy break-all group-hover:text-signal transition-colors">{site.contact.email}</p>
+          <p class="font-body text-sm text-slate-sea mt-4">Include cargo type, route, and target date if available.</p>
+        </a>
+        <div class="py-10 lg:py-14 lg:pr-12 border-b lg:border-r border-rule">
+          <p class="eyebrow mb-5">Office</p>
+          <address class="display-md text-navy not-italic">{site.contact.address}</address>
+          <a href="https://maps.google.com/?q=Nagbayan%2C%20Castillejos%2C%20Zambales%2C%20Philippines" target="_blank" rel="noopener noreferrer" class="inline-block mt-5 ink-link font-mono text-xs uppercase tracking-[.15em]">Open in maps →</a>
         </div>
-
-        <!-- Direct contact card -->
-        <div class="reveal reveal-delay-2 lg:col-span-5 lg:pl-8 lg:border-l lg:border-rule">
-          <p class="eyebrow mb-6">Or reach us directly</p>
-
-          <ul class="space-y-8">
-            <li>
-              <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-slate-sea/80 mb-2">Phone</p>
-              <a href={`tel:${site.contact.phone.replace(/\s/g, "")}`} class="display-md text-navy hover:text-brass-deep transition-colors">
-                {site.contact.phone}
-              </a>
-            </li>
-            <li>
-              <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-slate-sea/80 mb-2">Email</p>
-              <a href={`mailto:${site.contact.email}`} class="display-sm text-navy hover:text-brass-deep transition-colors break-all">
-                {site.contact.email}
-              </a>
-            </li>
-            <li>
-              <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-slate-sea/80 mb-2">Office</p>
-              <p class="display-sm text-navy">
-                {site.contact.address}
-              </p>
-            </li>
-            <li>
-              <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-slate-sea/80 mb-2">Social</p>
-              <div class="flex gap-6">
-                <a href={site.contact.facebook} target="_blank" rel="noopener noreferrer" class="ink-link font-body text-base">Facebook</a>
-                <a href={site.contact.instagram} target="_blank" rel="noopener noreferrer" class="ink-link font-body text-base">Instagram</a>
-              </div>
-            </li>
-          </ul>
-
-          <div class="mt-12 pt-10 border-t border-rule">
-            <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-slate-sea/80 mb-2">Office Hours</p>
-            <p class="font-body text-base text-slate-sea">Monday – Friday · 8:30 AM – 5:30 PM PHT</p>
-            <p class="font-body text-sm text-slate-sea/70 mt-1">Most quotes returned within the same business day.</p>
+        <div class="py-10 lg:py-14 lg:pl-12 border-b border-rule">
+          <p class="eyebrow mb-5">Follow</p>
+          <div class="flex flex-wrap gap-6">
+            <a href={site.contact.facebook} target="_blank" rel="noopener noreferrer" class="display-md text-navy hover:text-signal transition-colors">Facebook</a>
+            <a href={site.contact.instagram} target="_blank" rel="noopener noreferrer" class="display-md text-navy hover:text-signal transition-colors">Instagram</a>
           </div>
         </div>
+      </div>
+
+      <div class="mt-14 bg-paper-warm p-7 lg:p-10 grid lg:grid-cols-12 gap-7 items-center">
+        <p class="eyebrow lg:col-span-3">Helpful details to send</p>
+        <ul class="lg:col-span-9 grid sm:grid-cols-2 lg:grid-cols-4 gap-4 font-body text-sm text-slate-sea">
+          <li>• Cargo description</li><li>• Origin and destination</li><li>• Target arrival date</li><li>• Available documents</li>
+        </ul>
       </div>
     </div>
   </section>

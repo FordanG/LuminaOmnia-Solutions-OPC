@@ -1,32 +1,31 @@
 ---
-import { principles } from "~/data/site";
+const steps = [
+  ["Discover", "Review the cargo, timing, route, and requirements."],
+  ["Plan", "Map the compliant path and surface risks early."],
+  ["Execute", "Coordinate documents, handoffs, and milestones."],
+  ["Clear", "Manage release, duties, and agency follow-through."],
+  ["Deliver", "Confirm final movement and close the document trail."],
+];
 ---
 
-<section class="bg-paper-warm py-24 lg:py-36 paper-grain">
-  <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
-    <div class="grid lg:grid-cols-12 gap-8 mb-16 items-end">
-      <div class="lg:col-span-7">
-        <p class="reveal eyebrow mb-6">House Principles</p>
-        <h2 class="reveal reveal-delay-1 display-lg text-navy">
-          The way <em class="emphasis-dark">we work.</em>
-        </h2>
-      </div>
+<section class="bg-navy-abyss text-paper overflow-hidden">
+  <div class="max-w-[1440px] mx-auto grid lg:grid-cols-12 min-h-[540px]">
+    <div class="lg:col-span-5 px-6 lg:px-12 py-20 lg:py-24 flex flex-col justify-center">
+      <p class="eyebrow eyebrow-on-dark mb-5">A controlled route</p>
+      <h2 class="display-lg text-paper">Our process.<br/><span class="text-signal">Your advantage.</span></h2>
+      <ol class="mt-10 space-y-4">
+        {steps.map(([title, body], i) => (
+          <li class="grid grid-cols-[2rem_5rem_1fr] gap-3 items-baseline border-t border-paper/12 pt-4">
+            <span class="font-mono text-xs text-signal">{String(i + 1).padStart(2, "0")}</span>
+            <strong class="font-display uppercase tracking-wide text-lg">{title}</strong>
+            <span class="font-body text-xs leading-relaxed text-paper/58">{body}</span>
+          </li>
+        ))}
+      </ol>
     </div>
-
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-rule">
-      {principles.map((p, i) => (
-        <div class="reveal bg-paper-warm p-8 lg:p-10" style={`transition-delay: ${i * 80}ms;`}>
-          <span class="number-block block mb-6">
-            {p.number}
-          </span>
-          <h3 class="display-sm text-navy mb-4">
-            {p.title}
-          </h3>
-          <p class="font-body text-[15px] text-slate-sea leading-relaxed text-pretty">
-            {p.body}
-          </p>
-        </div>
-      ))}
+    <div class="lg:col-span-7 relative min-h-[380px]">
+      <img src="/img/customs-planning.jpg" alt="Shipment planning documents and a mapped route across the Philippines" width="1536" height="1024" loading="lazy" class="absolute inset-0 w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-gradient-to-r from-navy-abyss/55 to-transparent"></div>
     </div>
   </div>
 </section>

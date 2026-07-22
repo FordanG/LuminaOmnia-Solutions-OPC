@@ -3,7 +3,7 @@ import "~/styles/global.css";
 import Header from "~/components/Header.astro";
 import Footer from "~/components/Footer.astro";
 import { ClientRouter } from "astro:transitions";
-import { site } from "~/data/site";
+import { site, services } from "~/data/site";
 
 interface Props {
   title?: string;
@@ -16,7 +16,7 @@ interface Props {
 const {
   title,
   description = site.description,
-  ogImage = "/img/logo-original.jpg",
+  ogImage = "/img/meta-image.jpg",
   bodyClass = "",
 } = Astro.props;
 
@@ -25,10 +25,53 @@ const fullTitle = title
   : `${site.name} · ${site.tagline.split("\n")[0]}`;
 
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+const absoluteOgImage = new URL(ogImage, Astro.site).toString();
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": ["ProfessionalService", "LocalBusiness"],
+  name: site.name,
+  alternateName: site.shortName,
+  url: Astro.site?.toString(),
+  image: absoluteOgImage,
+  logo: new URL("/img/logo.png", Astro.site).toString(),
+  description,
+  foundingDate: String(site.founded),
+  telephone: site.contact.phone,
+  email: site.contact.email,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Nagbayan",
+    addressLocality: "Castillejos",
+    addressRegion: "Zambales",
+    addressCountry: "PH",
+  },
+  areaServed: { "@type": "Country", name: "Philippines" },
+  sameAs: [site.contact.facebook, site.contact.instagram],
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: site.contact.phone,
+    email: site.contact.email,
+    contactType: "customer service",
+    availableLanguage: ["English", "Filipino"],
+  },
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Customs brokerage and logistics services",
+    itemListElement: services.map((service) => ({
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: service.title,
+        description: service.summary,
+        areaServed: { "@type": "Country", name: "Philippines" },
+      },
+    })),
+  },
+};
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en-PH">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -36,26 +79,41 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
     <link rel="canonical" href={canonical} />
 
     <!-- OpenGraph -->
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:locale" content="en_PH" />
     <meta property="og:url" content={canonical} />
-    <meta property="og:image" content={new URL(ogImage, Astro.site).toString()} />
+    <meta property="og:image" content={absoluteOgImage} />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="LuminaOmnia Solutions customs brokerage and logistics" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={absoluteOgImage} />
 
     <!-- Favicons -->
-    <link rel="icon" type="image/png" href="/img/favicon.png" />
-    <link rel="apple-touch-icon" href="/img/favicon.png" />
-    <meta name="theme-color" content="#14305C" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/img/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#061725" />
+
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;1,500&family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
 

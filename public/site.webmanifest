@@ -1,0 +1,21 @@
+{
+  "name": "LuminaOmnia Solutions Trading OPC",
+  "short_name": "LuminaOmnia",
+  "description": "Customs brokerage, trade compliance, and logistics coordination in the Philippines.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#061725",
+  "theme_color": "#061725",
+  "icons": [
+    {
+      "src": "/img/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/img/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
