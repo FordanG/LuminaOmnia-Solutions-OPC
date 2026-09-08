@@ -15,7 +15,7 @@ export const site = {
   contact: {
     phone: "+63 998 855 4487",
     email: "luminaomniasolutions@gmail.com",
-    address: "Nagbayan, Castillejos, Zambales, Philippines",
+    address: "Unit 426, 4th Floor, The Aurora Suites & Pavilion, Canal Road cor. Labitan St., Subic Bay Freeport Zone, Olongapo City, Zambales 2200, Philippines",
     facebook: "https://www.facebook.com/profile.php?id=61560540554232",
     instagram: "https://www.instagram.com/luminaomniasolutionsopc",
   },
