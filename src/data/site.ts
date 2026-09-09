@@ -3,7 +3,7 @@ export const site = {
   shortName: "LuminaOmnia",
   tagline: "Clearer routes. Calmer operations.",
   description:
-    "Customs brokerage, trade compliance, and logistics coordination for businesses moving goods through the Philippines.",
+    "Business consultancy, customs brokerage, logistics, travel, and documentation services for businesses operating in and through the Philippines.",
   founded: 2024,
   experienceYears: 15,
   founder: {
@@ -34,8 +34,24 @@ export const nav = [
 
 export const services = [
   {
-    slug: "customs-brokerage",
+    slug: "business-consultancy",
     number: "01",
+    title: "Business Consultancy",
+    eyebrow: "Advisory",
+    summary:
+      "Senior, practical guidance for businesses entering, expanding, or restructuring in the Philippines—strategy, compliance, and government pathways translated into clear next actions.",
+    bullets: [
+      "Business setup, registration, and licensing pathways",
+      "Market entry and expansion strategy",
+      "Customs compliance audits and risk reviews",
+      "Supply-chain architecture and cost engineering",
+      "Government agency liaison and rapport-building",
+      "Trade-agreement utilization (ASEAN, RCEP, FTAs)",
+    ],
+  },
+  {
+    slug: "customs-brokerage",
+    number: "02",
     title: "Customs Brokerage",
     eyebrow: "Bureau of Customs",
     summary:
@@ -50,7 +66,7 @@ export const services = [
   },
   {
     slug: "import-export-logistics",
-    number: "02",
+    number: "03",
     title: "Import & Export Logistics",
     eyebrow: "Sea / Air / Land",
     summary:
@@ -64,25 +80,10 @@ export const services = [
     ],
   },
   {
-    slug: "consultancy",
-    number: "03",
-    title: "Trade & Compliance Consultancy",
-    eyebrow: "Advisory",
-    summary:
-      "Practical guidance for businesses entering or expanding in the Philippines, with compliance risks translated into clear next actions.",
-    bullets: [
-      "Market entry and licensing pathways",
-      "Customs compliance audits and risk reviews",
-      "Supply-chain architecture and cost engineering",
-      "Government agency rapport-building",
-      "Trade-agreement utilization (ASEAN, RCEP, FTAs)",
-    ],
-  },
-  {
     slug: "administrative-support",
     number: "04",
-    title: "Administrative Support",
-    eyebrow: "Operations",
+    title: "Documentation & Admin Support",
+    eyebrow: "Documents",
     summary:
       "Reliable follow-through for filings, permits, records, suppliers, and the administrative work that keeps operations on schedule.",
     bullets: [

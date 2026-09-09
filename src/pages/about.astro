@@ -2,12 +2,12 @@
 import founderPortrait from "~/assets/founder-portrait.jpg";
 import BaseLayout from "~/layouts/BaseLayout.astro";
 import ContactCTA from "~/components/ContactCTA.astro";
-import { site, timeline, principles } from "~/data/site";
+import { site, services, timeline, principles } from "~/data/site";
 ---
 
 <BaseLayout
   title="About"
-  description="The story behind LuminaOmnia Solutions Trading OPC — founder Jenny Thater, fifteen years in customs brokerage and logistics, and the principles that guide a deliberately small house."
+  description="The story behind LuminaOmnia Solutions Trading OPC — founder Jenny Thater, fifteen years across business consultancy, brokerage, and logistics, and the principles that guide a deliberately small house."
 >
   <!-- Page header -->
   <section class="relative bg-navy-abyss text-paper pt-32 pb-16 lg:pt-40 lg:pb-28 paper-grain overflow-hidden">
@@ -75,6 +75,51 @@ import { site, timeline, principles } from "~/data/site";
               ))}
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What we do -->
+  <section class="relative bg-paper-warm py-24 lg:py-36 paper-grain overflow-hidden">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+        <div class="lg:col-span-6">
+          <p class="reveal eyebrow mb-6">What We Do</p>
+          <h2 class="reveal reveal-delay-1 display-lg text-navy mb-8">
+            Where expertise, dedication, and results <em class="emphasis-dark">converge.</em>
+          </h2>
+          <div class="reveal reveal-delay-2 space-y-6 max-w-xl">
+            <p class="font-body text-base lg:text-lg text-slate-sea leading-relaxed text-pretty">
+              Experience the difference with LuminaOmnia Solutions — where expertise, dedication, and results converge to propel your business forward. That is what makes us the ideal partner for your business consultancy, brokerage, logistics, travel agency, and documentation needs.
+            </p>
+            <p class="font-body text-base lg:text-lg text-slate-sea leading-relaxed text-pretty">
+              Business consultancy sits at the front of that list on purpose. Most engagements start with a question — how to set up, where to expand, what a rule actually requires — and the brokerage, freight, travel, and paperwork follow from a plan that was thought through first.
+            </p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 lg:col-start-8">
+          <ol class="border-t border-rule">
+            {services.map((s, i) => (
+              <li class="reveal border-b border-rule" style={`transition-delay: ${i * 80}ms;`}>
+                <a href={`/services#${s.slug}`} class={`group flex gap-6 py-6 transition-colors ${i === 0 ? "bg-navy-abyss text-paper -mx-5 px-5 lg:-mx-6 lg:px-6" : "hover:bg-paper"}`}>
+                  <span class={`font-mono text-[11px] tracking-[0.22em] pt-1.5 flex-shrink-0 w-8 ${i === 0 ? "text-brass" : "text-slate-sea"}`}>{s.number}</span>
+                  <div class="flex-1">
+                    <div class="flex items-baseline justify-between gap-4">
+                      <h3 class={`display-sm ${i === 0 ? "text-paper" : "text-navy"}`}>{s.title}</h3>
+                      {i === 0 && (
+                        <span class="font-mono text-[10px] tracking-[0.22em] uppercase text-brass whitespace-nowrap">Featured</span>
+                      )}
+                    </div>
+                    <p class={`font-body text-[15px] leading-relaxed text-pretty mt-2 ${i === 0 ? "text-paper/75" : "text-slate-sea"}`}>
+                      {i === 0 ? s.summary : s.eyebrow}
+                    </p>
+                  </div>
+                </a>
+              </li>
+            ))}
+          </ol>
         </div>
       </div>
     </div>
