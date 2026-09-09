@@ -3,6 +3,8 @@ import { Image } from "astro:assets";
 import happyHome from "~/assets/partners/happy-home.png";
 import hannsLaundry from "~/assets/partners/hanns-laundry-services.png";
 import ayalaLand from "~/assets/partners/ayalaland.png";
+import innovex from "~/assets/partners/innovex.png";
+import icare from "~/assets/partners/icare.png";
 ---
 
 <section id="partners" aria-labelledby="partners-heading" class="bg-paper py-20 lg:py-28 border-t border-rule">
@@ -38,6 +40,18 @@ import ayalaLand from "~/assets/partners/ayalaland.png";
           </div>
           <p class="border-t border-rule px-6 py-5 font-display text-xl uppercase tracking-wide text-navy flex justify-between items-center group-hover:text-lighthouse-deep">Vendrato <span aria-hidden="true">↗</span></p>
         </a>
+      </li>
+      <li class="border border-rule bg-white">
+        <div class="h-64 sm:h-72 flex items-center justify-center p-7 sm:p-10 bg-[#ff8214]">
+          <Image src={innovex} alt="Innovex Electro-Mech Corp." widths={[480, 800, 851]} sizes="(max-width: 767px) 80vw, 450px" width={600} format="webp" quality={90} class="max-h-full w-full max-w-full object-contain" loading="lazy" />
+        </div>
+        <p class="border-t border-rule px-6 py-5 font-display text-xl uppercase tracking-wide text-navy">Innovex Electro-Mech Corp.</p>
+      </li>
+      <li class="border border-rule bg-white">
+        <div class="h-64 sm:h-72 flex items-center justify-center p-7 sm:p-10 bg-[#ff6d00]">
+          <Image src={icare} alt="iCare" widths={[480, 800, 805]} sizes="(max-width: 767px) 80vw, 450px" width={600} format="webp" quality={90} class="max-h-full w-full max-w-full object-contain" loading="lazy" />
+        </div>
+        <p class="border-t border-rule px-6 py-5 font-display text-xl uppercase tracking-wide text-navy">iCare</p>
       </li>
       <li class="border border-rule bg-white">
         <div class="h-64 sm:h-72 flex items-center justify-center p-7 sm:p-10">
