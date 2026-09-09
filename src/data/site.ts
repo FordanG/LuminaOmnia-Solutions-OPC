@@ -10,7 +10,7 @@ export const site = {
     name: "Jennelyn Dominguez Thater",
     shortName: "Jenny Thater",
     title: "President & CEO",
-    bio: "Born in Olongapo City and raised on the Zambales coast, Jenny has spent more than fifteen years working across customs brokerage, project logistics, and trade compliance. She founded LuminaOmnia to give clients direct senior attention—from the first document review to final delivery.",
+    bio: "Born in Olongapo City and raised on the Zambales coast, Jenny has spent more than fifteen years working across customs brokerage, project logistics, and trade compliance. She founded LuminaOmnia to give clients her direct attention—from the first document review to final delivery.",
   },
   contact: {
     phone: "+63 998 855 4487",
@@ -39,7 +39,7 @@ export const services = [
     title: "Business Consultancy",
     eyebrow: "Advisory",
     summary:
-      "Senior, practical guidance for businesses entering, expanding, or restructuring in the Philippines—strategy, compliance, and government pathways translated into clear next actions.",
+      "Practical guidance for businesses entering, expanding, or restructuring in the Philippines—strategy, compliance, and government pathways translated into clear next actions.",
     bullets: [
       "Business setup, registration, and licensing pathways",
       "Market entry and expansion strategy",
