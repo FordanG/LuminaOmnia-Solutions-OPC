@@ -6,7 +6,7 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://luminaomnia-solutions.netlify.app',
   output: 'static',
-  adapter: netlify(),
+  adapter: netlify({ imageCDN: false }),
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],
